@@ -1,0 +1,227 @@
+﻿<Window x:Class="EasyAccounting.User"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EasyAccounting"
+        mc:Ignorable="d"
+        Style="{DynamicResource WindowStyle}"
+         Title="Пользователь" Height="781" Width="1366">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="73"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="44"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.Row="0" Grid.ColumnSpan="3" Fill="#649254" Height="73"/>
+        <Rectangle Grid.Row="2" Grid.ColumnSpan="3" Fill="#649254" Height="44"/>
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Orientation="Horizontal">
+            <Rectangle Fill="#649254" Height="73" Width="260"/>
+            <Rectangle Fill="#649254" Height="73" Width="180"/>
+            <Rectangle Fill="#649254" Height="73" Width="100"/>
+            <Rectangle Fill="#649254" Height="73" Width="220"/>
+            <Rectangle Fill="#FF487439" Height="73" Width="240"/>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Orientation="Horizontal">
+            <Label Content="EasyAccounting" 
+                   Style="{DynamicResource LabelStyleHeader}"/>
+            <Label Content="Категории" 
+                   Style="{DynamicResource LabelStyleHeader}"/>
+            <Label Content="FAQ" 
+                   Style="{DynamicResource LabelStyleHeader}"/>
+            <Label Content="Курс валюты" 
+                   Style="{DynamicResource LabelStyleHeader}"/>
+            <Label Content="Пользователь" 
+                   Style="{DynamicResource LabelStyleHeader}"/>
+        </StackPanel>
+        <Label
+               x:Name="lblTime"
+               Grid.ColumnSpan="3" Foreground="White"
+                   FontSize="32" Margin="0,0,30,0" VerticalAlignment="Center" 
+               HorizontalAlignment="Right">--.--.-- --:--</Label>
+        <StackPanel Grid.Row="1" Grid.Column="0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <Label Content="Войти в учётную запись" 
+                   HorizontalAlignment="Center"
+                   Style="{DynamicResource LabelStyle}"
+                   FontSize="25"/>
+            <Border Style="{DynamicResource BorderStyle}"
+                      Margin="0,35,0,0">
+                <TextBox x:Name="tbLogin" 
+                         Style="{DynamicResource TextBoxStyle}"/>
+            </Border>
+            
+            <TextBlock IsHitTestVisible="False" Width="290"
+                       Height="35" FontSize="20"
+                       Text="Логин" Margin="0,-35,0,0"
+                       Foreground="DarkGray">
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=tbLogin}"
+                                         Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+            
+            <TextBlock x:Name="tblPasswordHint" IsHitTestVisible="False" Width="290"
+                       Height="35" FontSize="20"
+                       Text="Пароль" Margin="0,40,0,0"
+                       Foreground="DarkGray">
+                
+            </TextBlock>
+            <Border Margin="0,-40,0,0"
+                    Style="{DynamicResource BorderStyle}">
+                <PasswordBox x:Name="pbPassword"
+                             PasswordChanged="tbPassword_PasswordChanged"
+                             Style="{DynamicResource PasswordBoxStyle}"/>
+            </Border>
+
+            <Button Content="Войти" 
+                    Style="{DynamicResource ButtonStyle}"
+                    Margin="30" Click="Button_Click_1">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <Label Content="Новая учётная запись"
+                   Style="{DynamicResource LabelStyle}"
+                   HorizontalAlignment="Center"
+                   FontSize="25"/>
+            <Border Margin="0,35,0,0"
+                    Style="{DynamicResource BorderStyle}">
+                <TextBox x:Name="tbLogin1"
+                         Style="{DynamicResource TextBoxStyle}"/>
+            </Border>
+
+            <TextBlock IsHitTestVisible="False" Width="290"
+                       Height="35" FontSize="20"
+                       Text="Логин" Margin="0,-35,0,0"
+                       Foreground="DarkGray">
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=tbLogin1}"
+                                         Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+
+            <TextBlock x:Name="tblPasswordHint1" IsHitTestVisible="False" Width="290"
+                       Height="35" FontSize="20"
+                       Text="Пароль" Margin="0,40,0,0"
+                       Foreground="DarkGray">
+
+            </TextBlock>
+            <Border Margin="0,-40,0,0"
+                    Style="{DynamicResource BorderStyle}">
+                <PasswordBox x:Name="pbPassword1"
+                             Style="{DynamicResource PasswordBoxStyle}"
+                             PasswordChanged="pbPassword1_PasswordChanged"
+                             FontSize="20"
+                             Background="Transparent"
+                             BorderThickness="0"/>
+            </Border>
+
+            <TextBlock x:Name="tblPasswordHint2" IsHitTestVisible="False" Width="290"
+                       Height="35" FontSize="20"
+                       Text="Повторите пароль" Margin="0,40,0,0"
+                       Foreground="DarkGray">
+
+            </TextBlock>
+            <Border Margin="0,-40,0,0"
+                    Style="{DynamicResource BorderStyle}">
+                <PasswordBox x:Name="pbPassword2"
+                             PasswordChanged="pbPassword2_PasswordChanged"
+                             Style="{DynamicResource PasswordBoxStyle}"/>
+            </Border>
+
+            <Border Margin="0,35,0,0"
+                    Style="{DynamicResource BorderStyle}">
+                <TextBox x:Name="tbName" 
+                         Style="{DynamicResource TextBoxStyle}"/>
+            </Border>
+
+            <TextBlock IsHitTestVisible="False" Width="290"
+                       Height="35" FontSize="20"
+                       Text="Имя" Margin="0,-35,0,0"
+                       Foreground="DarkGray">
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=tbName}"
+                                         Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+
+            <Border Margin="0,35,0,0"
+                    Style="{DynamicResource BorderStyle}">
+                <TextBox x:Name="tbLastName" 
+                         Style="{DynamicResource TextBoxStyle}"/>
+            </Border>
+
+            <TextBlock IsHitTestVisible="False" Width="290"
+                       Height="35" FontSize="20"
+                       Text="Фамилия" Margin="0,-35,0,0"
+                       Foreground="DarkGray">
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=tbLastName}"
+                                         Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+
+            <Button Content="Зарегистрироваться" Style="{DynamicResource ButtonStyle}" Margin="30" Click="Button_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="3">
+            <Image Margin="10,0,0,0" Width="40"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"
+                   MouseUp="Image_MouseUp"
+                   Source="image/177-1775755_computer-icons-clip-art-icon.png"/>
+            <Label Content="©EasyAccounting 2022 г." 
+                   Foreground="White"
+                   FontSize="20" Margin="0,0,30,0"
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Right"/>
+        </StackPanel>
+    </Grid>
+</Window>
