@@ -23,6 +23,16 @@ namespace EasyAccounting
         public MainWindow()
         {
             InitializeComponent();
+            OnTimedEvent();
+        }
+
+        async Task OnTimedEvent()
+        {
+            while (true)
+            {
+                await Task.Delay(1000);
+                lblTimeK.Content = DateTime.Now.ToString("dd.MM.yyyy, HH:mm:ss");
+            }
         }
 
         private void Label_MouseUp(object sender, MouseButtonEventArgs e)

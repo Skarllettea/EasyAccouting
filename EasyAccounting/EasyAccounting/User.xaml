@@ -73,10 +73,9 @@
                 </TextBlock.Style>
             </TextBlock>
             
-            <TextBlock x:Name="tblPasswordHint" IsHitTestVisible="False" Width="290"
-                       Height="35" FontSize="20"
-                       Text="Пароль" Margin="0,40,0,0"
-                       Foreground="DarkGray">
+            <TextBlock x:Name="tblPasswordHint"
+                       Style="{DynamicResource TextBlockStyle}"
+                       Text="Пароль" Margin="0,40,0,0">
                 
             </TextBlock>
             <Border Margin="0,-40,0,0"
@@ -127,26 +126,21 @@
                 </TextBlock.Style>
             </TextBlock>
 
-            <TextBlock x:Name="tblPasswordHint1" IsHitTestVisible="False" Width="290"
-                       Height="35" FontSize="20"
-                       Text="Пароль" Margin="0,40,0,0"
-                       Foreground="DarkGray">
+            <TextBlock x:Name="tblPasswordHint1"
+                       Style="{DynamicResource TextBlockStyle}"
+                       Text="Пароль" Margin="0,40,0,0">
 
             </TextBlock>
             <Border Margin="0,-40,0,0"
                     Style="{DynamicResource BorderStyle}">
                 <PasswordBox x:Name="pbPassword1"
                              Style="{DynamicResource PasswordBoxStyle}"
-                             PasswordChanged="pbPassword1_PasswordChanged"
-                             FontSize="20"
-                             Background="Transparent"
-                             BorderThickness="0"/>
+                             PasswordChanged="pbPassword1_PasswordChanged"/>
             </Border>
 
-            <TextBlock x:Name="tblPasswordHint2" IsHitTestVisible="False" Width="290"
-                       Height="35" FontSize="20"
-                       Text="Повторите пароль" Margin="0,40,0,0"
-                       Foreground="DarkGray">
+            <TextBlock x:Name="tblPasswordHint2"
+                       Style="{DynamicResource TextBlockStyle}"
+                       Text="Повторите пароль" Margin="0,40,0,0">
 
             </TextBlock>
             <Border Margin="0,-40,0,0"

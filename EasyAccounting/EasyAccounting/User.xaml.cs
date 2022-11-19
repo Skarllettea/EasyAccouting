@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,13 +22,25 @@ namespace EasyAccounting
     /// </summary>
     public partial class User : Window
     {
+        private static System.Timers.Timer aTimer;
+        
         public User()
         {
             InitializeComponent();
-
-
-            //lblTime.Text = DateTime.Now.ToString("dd.MM.yyyy, HH:mm:ss");
+            OnTimedEvent();
         }
+        async Task OnTimedEvent()
+        {
+            while(true)
+            {
+                await Task.Delay(1000);
+                lblTime.Content = DateTime.Now.ToString("dd.MM.yyyy, HH:mm:ss");
+            }
+        }
+        /*async OnTimedEvent(object source, ElapsedEventArgs e)
+        {
+            lblTime.Content = DateTime.Now.ToString("dd.MM.yyyy, HH:mm:ss");
+        }*/
 
         private void tbPassword_PasswordChanged(object sender, RoutedEventArgs e)
         {

@@ -16,21 +16,23 @@
         <Rectangle Grid.Row="0" Fill="#649254" Height="73"/>
         <Rectangle Grid.Row="2" Fill="#649254" Height="44"/>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Label Content="EasyAccounting" Foreground="White"
-                   FontSize="32" Margin="30,0,0,0" VerticalAlignment="Center"/>
-            <Label Content="Категории" Foreground="White"
-                   FontSize="32" Margin="30,0,0,0" VerticalAlignment="Center"/>
-            <Label Content="FAQ" Foreground="White"
-                   FontSize="32" Margin="30,0,0,0" VerticalAlignment="Center"/>
-            <Label Content="Курс валюты" Foreground="White"
-                   FontSize="32" Margin="30,0,0,0" VerticalAlignment="Center"/>
+            <Label Content="EasyAccounting" 
+                   Style="{DynamicResource LabelStyleHeader}"/>
+            <Label Content="Категории" 
+                   Style="{DynamicResource LabelStyleHeader}"/>
+            <Label Content="FAQ" 
+                   Style="{DynamicResource LabelStyleHeader}"/>
+            <Label Content="Курс валюты" 
+                   Style="{DynamicResource LabelStyleHeader}"/>
             <Label Content="Пользователь" 
                    MouseUp="Label_MouseUp"
-                   Foreground="White"
-                   FontSize="32" Margin="30,0,0,0" VerticalAlignment="Center"/>
+                   Style="{DynamicResource LabelStyleHeader}"/>
         </StackPanel>
-        <Label Content="--.--.-- --:--" Foreground="White"
-                   FontSize="32" Margin="0,0,30,0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <Label Content="--.--.-- --:--"
+               x:Name="lblTimeK"
+               Foreground="White"
+               FontSize="32" Margin="0,0,30,0" 
+               VerticalAlignment="Center" HorizontalAlignment="Right"/>
         <StackPanel Grid.Row="2" >
             <Image Margin="10,0,0,0" Width="40"
                    VerticalAlignment="Center"

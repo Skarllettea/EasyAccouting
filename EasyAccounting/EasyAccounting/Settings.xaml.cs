@@ -22,10 +22,21 @@ namespace EasyAccounting
         public Settings()
         {
             InitializeComponent();
+            OnTimedEvent();
             List<string> styles = new List<string> { "Light", "Dark" };
             styleBox.SelectionChanged += ThemeChange;
             styleBox.ItemsSource = styles;
             styleBox.SelectedItem = "Dark";
+           
+        }
+
+        async Task OnTimedEvent()
+        {
+            while (true)
+            {
+                await Task.Delay(1000);
+                lblTimeS.Content = DateTime.Now.ToString("dd.MM.yyyy, HH:mm:ss");
+            }
         }
 
         public void ThemeChange(object sender, SelectionChangedEventArgs e)
